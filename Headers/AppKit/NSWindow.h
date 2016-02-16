@@ -132,7 +132,9 @@ enum {
   NSWindowStyleMaskFullSizeContentView = NSFullSizeContentViewWindowMask,
 #endif
   NSIconWindowMask = 64,	/* GNUstep extension - app icon window	*/
-  NSMiniWindowMask = 128	/* GNUstep extension - miniwindows	*/
+  NSMiniWindowMask = 128,	/* GNUstep extension - miniwindows	*/
+  NSBackgroundWindowMask = 512, /* GNUstep extension - background window */
+  NSMainMenuWindowMask = 1024   /* GNUstep extension - main menu window  */
 };
 typedef NSUInteger NSWindowStyleMask;
 
