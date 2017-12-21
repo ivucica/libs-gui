@@ -1,3 +1,13 @@
+2017-12-21 Ivan Vucica <ivan@vucica.net>
+
+	* Documentation/announce.texi
+	* Documentation/news.texi
+	* Documentation/ReleaseNotes.gsdoc
+	* ANNOUNCE
+	* NEWS
+	* Version: Cut a new release of gnustep-gui which requires
+	gnustep-base 1.25.1.
+
 2017-12-10 Ivan Vucica <ivan@vucica.net>
 
 	* NEWS: Regenerate NEWS file for the 0.26.0 release.

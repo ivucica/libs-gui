@@ -9,6 +9,14 @@
 The currently released version of the library is @samp{@value{GNUSTEP-GUI-VERSION}}.
 @end ifclear
 
+@section Noteworthy changes in version @samp{0.26.1}
+
+This version is released to conincide with version 1.25.1 of
+gnustep-base, which contains changes required for this version of
+gnustep-gui and gnustep-back.
+
+There are no other changes.
+
 @section Noteworthy changes in version @samp{0.26.0}
 
 This version was bumped due to previous binary incompatibilities

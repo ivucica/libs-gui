@@ -21,6 +21,14 @@
       </p>
 
       <section>
+        <heading>0.26.1</heading>
+        <p>
+	  This version is released to conincide with version 1.25.1 of
+	  gnustep-base, which contains changes required for this version of
+	  gnustep-gui and gnustep-back.
+
+	  There are no other changes.
+        </p>
         <heading>0.26.0</heading>
         <p>
           Bumped due to binary incompatibilities between 0.25.0 and 0.25.1. Also
