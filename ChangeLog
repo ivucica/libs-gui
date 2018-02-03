@@ -15,6 +15,13 @@
 	here...
 	* Source/NSApplication.m (-beginSheet:...:contextInfo:): ...to here.
 
+2018-02-03 Ivan Vucica <ivan@vucica.net>
+
+	* Headers/AppKit/NSWindow.h: Adding two new window mask constants.
+	* Source/NSMenu.m: Use NSMainMenuWindowMask when creating main menu
+	windows.
+	Patch by Sergio L. Pascual <sergiolpascual@flexvdi.com>
+
 2018-01-29 Fred Kiefer <FredKiefer@gmx.de>
 
 	* Tools/speech/GNUmakefile,
