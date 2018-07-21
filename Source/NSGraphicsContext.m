@@ -241,6 +241,8 @@ NSGraphicsContext	*GSCurrentContext(void)
   new->_graphicsPort = port;
   new->_isFlipped = flag;
 
+  [new GSSetDevice: port : 0 : 0];
+
   return new;
 }
 

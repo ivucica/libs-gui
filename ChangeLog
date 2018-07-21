@@ -1,3 +1,9 @@
+2018-07-21 Ivan Vucica <ivan@vucica.net>
+
+	* Source/NSGraphicsContext.m (+graphicsContextWithGraphicsPort:flipped:):
+	Pass the requested graphics port into the newly created graphics
+	context using -GSSetDevice:::.
+
 2018-07-14 Fred Kiefer <FredKiefer@gmx.de>
 
 	* Source/NSPrinter.m (-addPPDKeyword:withScanner:withPPDPath:):
