@@ -71,3 +71,7 @@ compile_commands.json
 *.out
 .vscode
 *.tmp
+
+/bazel-*
+/MODULE.bazel.lock
+!.bazel/**

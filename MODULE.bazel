@@ -1,0 +1,30 @@
+module(
+    name = "gnustep_gui",
+    version = "0.32.0",
+)
+
+bazel_dep(name = "platforms", version = "1.0.0")
+bazel_dep(name = "rules_cc", version = "0.2.17")
+bazel_dep(name = "libtiff", version = "4.7.2.bcr.2")
+bazel_dep(name = "libpng", version = "1.6.50.bcr.1")
+bazel_dep(name = "libjpeg_turbo", version = "3.1.3.bcr.6")
+bazel_dep(name = "giflib", version = "5.2.1.bcr.1")
+bazel_dep(name = "icu", version = "78.2.bcr.2")
+bazel_dep(name = "gnustep_make", version = "2.9.3")
+bazel_dep(name = "libobjc2", version = "2.2")
+bazel_dep(name = "gnustep_base", version = "1.31.1")
+
+local_path_override(
+    module_name = "gnustep_make",
+    path = "../tools-make-bazel",
+)
+
+local_path_override(
+    module_name = "libobjc2",
+    path = "../libobjc2-bazel",
+)
+
+local_path_override(
+    module_name = "gnustep_base",
+    path = "../libs-base-bazel",
+)

@@ -1,0 +1,87 @@
+#ifndef GNUSTEP_GUI_CONFIG_H
+#define GNUSTEP_GUI_CONFIG_H
+
+#define PACKAGE_NAME "gnustep-gui"
+#define PACKAGE_TARNAME "gnustep-gui"
+#define PACKAGE_VERSION "0.32.0"
+#define PACKAGE_STRING "gnustep-gui 0.32.0"
+#define PACKAGE_BUGREPORT "bug-gnustep@gnu.org"
+#define PACKAGE_URL "http://www.gnustep.org"
+#define STDC_HEADERS 1
+
+#define HAVE_STDINT_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDIO_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_SYS_STATVFS_H 1
+#define HAVE_SYS_TYPES_H 1
+
+#define HAVE_ATAN2F 1
+#define HAVE_FLOORF 1
+#define HAVE_RINT 1
+#define HAVE_RINTF 1
+#define HAVE_STATFS 1
+#define HAVE_STATVFS 1
+#define HAVE_LIBM 1
+#define HAVE_LIBZ 1
+
+#ifdef __linux__
+#define HAVE_MNTENT_H 1
+#define HAVE_GETMNTENT 1
+#define HAVE_SYS_VFS_H 1
+#define HAVE_SYS_INOTIFY_H 1
+#define MNT_MEMB mnt_dir
+#define MNT_FSNAME mnt_fsname
+#endif
+
+#ifdef __FreeBSD__
+#define HAVE_GETMNTINFO 1
+#define HAVE_STRUCT_STATFS_F_FLAGS 1
+#define MNT_MEMB f_mntonname
+#define MNT_FSNAME f_mntfromname
+#endif
+
+#define HAVE_LIBTIFF 1
+#define HAVE_LIBPNG 1
+#define HAVE_PNG_H 1
+#define HAVE_LIBJPEG 1
+#define HAVE_JPEGLIB_H 1
+#define HAVE_LIBGIF 1
+#define HAVE_GIFQUANTIZEBUFFER 1
+
+#define HAVE_UNICODE_UBRK_H 1
+#define HAVE_UNICODE_UCAL_H 1
+#define HAVE_UNICODE_UCHAR_H 1
+#define HAVE_UNICODE_UCNV_H 1
+#define HAVE_UNICODE_UCOL_H 1
+#define HAVE_UNICODE_UCURR_H 1
+#define HAVE_UNICODE_UDATPG_H 1
+#define HAVE_UNICODE_UDAT_H 1
+#define HAVE_UNICODE_ULOCDATA_H 1
+#define HAVE_UNICODE_ULOC_H 1
+#define HAVE_UNICODE_UNORM2_H 1
+#define HAVE_UNICODE_UNUM_H 1
+#define HAVE_UNICODE_UREGEX_H 1
+#define HAVE_UNICODE_USEARCH_H 1
+#define HAVE_UNICODE_USTRING_H 1
+#define HAVE_UNICODE_UTEXT_H 1
+#define HAVE_UNICODE_UTYPES_H 1
+
+#ifndef HAVE_RINTF
+#define rintf rint
+#endif
+#ifndef HAVE_RINT
+#define DEFINE_RINT_IF_MISSING   \
+static double rint(double a)     \
+{                                \
+  return (floor(a+0.5));         \
+}
+#else
+#define DEFINE_RINT_IF_MISSING
+#endif
+
+#endif /* GNUSTEP_GUI_CONFIG_H */

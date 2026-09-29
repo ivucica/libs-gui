@@ -1,0 +1,52 @@
+name: Bazel CI
+
+on:
+  push:
+    branches: [ main, master, bazel-build ]
+  pull_request:
+    branches: [ main, master, bazel-build ]
+
+jobs:
+  bazel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout libs-gui
+        uses: actions/checkout@v4
+        with:
+          path: libs-gui-bazel
+
+      - name: Checkout tools-make (bazel-build)
+        uses: actions/checkout@v4
+        with:
+          repository: ivucica/tools-make
+          ref: bazel-build
+          path: tools-make-bazel
+
+      - name: Checkout libobjc2 (bazel-build)
+        uses: actions/checkout@v4
+        with:
+          repository: ivucica/libobjc2
+          ref: bazel-build
+          path: libobjc2-bazel
+
+      - name: Checkout libs-base (bazel-build)
+        uses: actions/checkout@v4
+        with:
+          repository: ivucica/libs-base
+          ref: bazel-build
+          path: libs-base-bazel
+
+      - name: Setup Bazel
+        uses: bazel-contrib/setup-bazel@0.19.0
+        with:
+          bazelisk-cache: true
+          disk-cache: true
+
+      - name: Build and Test with Bazel
+        working-directory: libs-gui-bazel
+        env:
+          CC: clang
+          CXX: clang++
+        run: |
+          bazel build //:gnustep-gui //:make_services
+          bazel test //:nsaffinetransform_test
